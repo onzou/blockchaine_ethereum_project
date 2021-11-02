@@ -1,7 +1,7 @@
 import './App.css';
 import { Component } from 'react';
 import web3 from './web3';
-import donation from './donation';
+import donation  from './donation';
 
 class App extends Component 
 {
@@ -24,13 +24,14 @@ class App extends Component
   {
     for(let i = 0; i< this.state.length; i++)
     {
-      const singleOrganization = await donationManager.methods.orginations(0).call();
+      const singleOrganization = await donation.methods.orginations(0).call();
       this.organizations.push(singleOrganization);
     }    
   }
+  
   componentDidMount = async ()=>
   {
-    const organizationLength = await donationManager.methods.getOrganizationLength().call();
+    const organizationLength = await donation.methods.getOrganizationLength().call();
     this.setState({organizationLength});
     this.gettingAllOrganizations();
 
@@ -38,7 +39,16 @@ class App extends Component
 
   onSubscribe = async event =>
   {
-    
+    event.preventDefault();
+    this.setState({message: "Chargement...."})
+    try 
+    {
+      await donation.methods.createOrganization(this.organization.name,this.organization.description).call();
+      this.setState({message: "Vous avez été ajouté avec succès...."})
+    }catch(error)
+    {
+      this.setState({message: "Erreur lors de l'ajout!"})
+    }
   }
 
 
@@ -46,17 +56,9 @@ class App extends Component
   {
     event.preventDefault();
     this.setState({message: "Chargement...."})
-    const accounts = await web3.eth.getAccounts();
     try 
     {
       await donation.methods.createOrganization(this.organization.name,this.organization.description).call();
-                    
-      /*
-      .send(
-                      {
-                        from: accounts[0],
-                        value: web3.utils.toWei(this.state.value, "ether")
-                      });*/
       this.setState({message: "Vous avez été ajouté avec succès...."})
     }catch(error)
     {
@@ -79,8 +81,8 @@ class App extends Component
                       value: web3.utils.toWei(this.state.value, "ether")
                     });
 
-      this.setState({message: "Vous avez été ajouté avec succès...."})
-      
+      this.setState({message: "Donation fait avec succès...."})
+
     }catch(error)
     {
       this.setState({message: "Erreur lors de l'ajout!"})
@@ -104,17 +106,13 @@ class App extends Component
                 </div>
 
                 <div class="form-group mt-3 mb-2">
-                      <label for="first_name" class="form-label">Prénom</label>
-                      <input required type="text" class="shadow-sm input" placeholder="" name="first_name" id="first_name"/>
+                      <label for="organization_name" class="form-label">Nom de l'organisation</label>
+                      <input required type="text" class="shadow-sm input" placeholder="" name="organization_name" id="organization_name"/>
                 </div>
               
-                <div class="form-group my-2">
-                  <label for="last_name" class="form-label">Nom</label>
-                  <input required type="text" class="shadow-sm input" placeholder="" name="last_name" id="last_name"/>
-                </div>
               
                 <div class="form-group my-2">
-                  <label for="service" class="form-label">Service</label>
+                  <label for="service" class="form-label">Addresse</label>
                   <input required type="text" class="shadow-sm input" placeholder="" name="service" id="service"/>
                 </div>
                 
@@ -130,6 +128,51 @@ class App extends Component
           
         </div>
 
+      <div>
+      <div class="table100 ver2 m-b-110">
+          <div class="table100-head">
+              <table>
+                  <thead>
+                      <tr class="row100 head">
+                          <th class="cell100 column1">Nom</th>
+                          <th class="cell100 column2">Description</th>
+                          <th class="cell100 column3">Addresse</th>
+                      </tr>
+                  </thead>
+              </table>
+          </div>
+          <div class="table100-body js-pscroll ps ps--active-y">
+              <table>
+                  <tbody>
+                      <tr class="row100 body">
+                          <td class="cell100 column1">Like a butterfly</td>
+                          <td class="cell100 column2">Boxing</td>
+                          <td class="cell100 column3">9:00 AM - 11:00 AM</td>
+                      </tr>
+                      <tr class="row100 body">
+                          <td class="cell100 column1">Mind &amp; Body</td>
+                          <td class="cell100 column2">Yoga</td>
+                          <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                      </tr>
+                      <tr class="row100 body">
+                          <td class="cell100 column1">Crit Cardio</td>
+                          <td class="cell100 column2">Gym</td>
+                          <td class="cell100 column3">9:00 AM - 10:00 AM</td>
+                      </tr>
+                      <tr class="row100 body">
+                          <td class="cell100 column1">Wheel Pose Full Posture</td>
+                          <td class="cell100 column2">Yoga</td>
+                          <td class="cell100 column4">Donna Wilson</td>
+                      </tr>
+                     
+                  </tbody>
+              </table>
+              <div class="ps__rail-x" style={{left: "0px", bottom: "-603px"}}>
+                  <div class="ps__thumb-x" tabindex="0" style={{left: "0px", width: "0px"}}></div>
+              </div>
+          </div>
+      </div>
+</div>
         
       </div>
   )}
