@@ -1,38 +1,70 @@
-.App {
-  text-align: center;
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.center{
+  margin: 0 auto;
+  width: 100px; 
+}
+.container
+{
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.size-sm{
+  width: 42em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.input, .text-area
+{
+  transition: 0.2s ease-in;
+  border-radius: 10px;
+  width: 100%;
+  padding: 5px;
+  border: solid #eee 2px;
+  outline: none;
+}
+
+.input:focus , .text-area:focus{
+  border: solid #000 1px;
+  outline: none;
+}
+
+.text-area{
+  
+}
+
+.divider {
+  background-color: #000;
+  border: solid #000 3px;
+  border-radius: 2px;
+  width: 10em;
+  margin-top: 4px;
+}
+
+.but{
+  padding: 9px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  width: 30%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;  
+  color: #000;
+  border: 1px solid #000;
+  transition: 0.3s ease;
+}
+
+.but:focus, .but:hover {
+  background-color: #000;
+  transform: translateX(-50%,50%);
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  transition: .5s;
 }
