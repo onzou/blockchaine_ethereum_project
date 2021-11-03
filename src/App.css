@@ -27,14 +27,14 @@
   border-radius: 10px;
   width: 100%;
   padding: 5px;
-  border: solid #eee 2px;
+  /* border: solid #eee 2px; */
   outline: none;
 }
 
 .input:focus , .text-area:focus{
-  border: solid #000 1px;
-  outline: none;
+  border: 1px solid #000;
 }
+
 .divider {
   background-color: #000;
   border: solid #000 3px;
@@ -270,9 +270,6 @@ td {
   color: white;
 }
 
-
-/*==================================================================
-[ Fix header ]*/
 
 .table100 {
   position: relative;

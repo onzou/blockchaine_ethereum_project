@@ -2,19 +2,28 @@ import './App.css';
 import { Component } from 'react';
 import web3 from './web3';
 import donation  from './donation';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+toast.configure();
 
 class App extends Component 
 {
+
   state = {
     organizationLength: "",
     value: "",
-    message: ""
+    message: "",
+    organizationName: "",
+    organizationResidency: "",
+    organizationDescription: "",
+
   };
 
   organization = {
     name: "",
     description: "",
-    address: "",
+    residency: "",
     amount: "",
   }
 
@@ -24,9 +33,10 @@ class App extends Component
   {
     for(let i = 0; i< this.state.length; i++)
     {
-      const singleOrganization = await donation.methods.orginations(0).call();
+      const singleOrganization = await donation.methods.orginations(i).call();
       this.organizations.push(singleOrganization);
     }    
+    console.log(this.organizations);
   }
   
   componentDidMount = async ()=>
@@ -37,34 +47,23 @@ class App extends Component
 
   }
 
-  onSubscribe = async event =>
-  {
-    event.preventDefault();
-    this.setState({message: "Chargement...."})
-    try 
-    {
-      await donation.methods.createOrganization(this.organization.name,this.organization.description).call();
-      this.setState({message: "Vous avez été ajouté avec succès...."})
-    }catch(error)
-    {
-      this.setState({message: "Erreur lors de l'ajout!"})
-    }
-  }
-
-
   onCreateOrganization = async event =>
   {
     event.preventDefault();
-    this.setState({message: "Chargement...."})
-    try 
+    const accounts = await web3.eth.getAccounts();
+    toast.promise( async()=>
     {
-      await donation.methods.createOrganization(this.organization.name,this.organization.description).call();
-      this.setState({message: "Vous avez été ajouté avec succès...."})
-    }catch(error)
+      await donation.methods.createOrganization(this.organization.name,this.organization.description, this.organization.residency)
+                            .send(
+                            {
+                              from: accounts[0], 
+                            });
+    },
     {
-      this.setState({message: "Erreur lors de l'ajout!"})
-    }
-
+      pending: "Chargement...",
+      success: "Création réussie",
+      error: "Erreur lors de la création"
+    });
   }
 
   onDonate = async event =>
@@ -74,6 +73,7 @@ class App extends Component
     const accounts = await web3.eth.getAccounts();
     try 
     {
+      toast("Chargement...",{autoClose: false});
       await donation.methods.donate(this.organization.donationReceiver)
                     .send(
                     {
@@ -81,47 +81,62 @@ class App extends Component
                       value: web3.utils.toWei(this.state.value, "ether")
                     });
 
-      this.setState({message: "Donation fait avec succès...."})
-
+      toast.success("Donation réussie...",{autoClose: 2000});
     }catch(error)
     {
-      this.setState({message: "Erreur lors de l'ajout!"})
+      toast.error("Erreur...",{autoClose: 2000});
+
     }
   }
 
   render() 
   {
     return (
-      <div class="container">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
+      <div className="container">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous"/>
+        <p>il y a {this.state.organizationLength} organisation(s)</p>
+        <div className="container">
+          <div className="center size-sm">
+            <div className="card shadow-sm card-body " > 
+              <form className="px-4" onSubmit={this.onCreateOrganization}>
 
-        <div class="container">
-          <div class="center size-sm">
-            <div class="card shadow-sm card-body " > 
-              <form class="px-4">
-
-                <div class="card-title h3"> 
+                <div className="card-title h3"> 
                   Création de compte pour votre organisation
-                  <hr class="divider"/>
+                  <hr className="divider"/>
                 </div>
 
-                <div class="form-group mt-3 mb-2">
-                      <label for="organization_name" class="form-label">Nom de l'organisation</label>
-                      <input required type="text" class="shadow-sm input" placeholder="" name="organization_name" id="organization_name"/>
+                <div className="form-group mt-3 mb-2">
+                      <label htmlFor="organization_name" className="form-label">Nom de l'organisation</label>
+                      <input required type="text"
+                            className="shadow-sm input"
+                            placeholder="Entrez le nom de votre organisation"
+                            onChange={event => this.setState({organizationName: event.target.value})}
+                            value={this.state.organizationName}
+                            name="organization_name" id="organization_name"/>
                 </div>
               
-              
-                <div class="form-group my-2">
-                  <label for="service" class="form-label">Addresse</label>
-                  <input required type="text" class="shadow-sm input" placeholder="" name="service" id="service"/>
+                <div className="form-group my-2">
+                  <label htmlFor="residency" className="form-label">Résidence</label>
+                  <input required type="text"
+                        onChange={event => this.setState({organizationResidency: event.target.value})}
+                        value={this.state.organizationResidency}
+                        className="shadow-sm input" 
+                        placeholder="Entrez l'adresse de l'organisation" 
+                        name="residency" id="residency"/>
                 </div>
                 
-                <div class="form-group my-2">
-                  <label for="service" class="form-label">Description</label>
-                  <textarea required  type="text" class="shadow-sm text-area" placeholder="" row="20" name="service" id="service"></textarea>
+                <div className="form-group my-2">
+                  <label htmlFor="description" className="form-label">Description</label>
+                  <textarea required  type="text" row="20" maxLength="100"
+                            className="shadow-sm text-area"
+                            placeholder="Entrez une brève description de votre organisation" 
+                            onChange={event => this.setState({organizationDescription: event.target.value})}
+                            value={this.state.organizationDescription}
+                            name="description"
+                            id="description"></textarea>
                 </div>
+                <button type="submit"  className="but shadow-sm">S'inscrire</button>
 
-              <button type="submit" class="but shadow-sm">S'inscrire</button>
               </form>
           </div>
           </div>
@@ -129,46 +144,46 @@ class App extends Component
         </div>
 
       <div>
-      <div class="table100 ver2 m-b-110">
-          <div class="table100-head">
+      <div className="table100 ver2 m-b-110">
+          <div className="table100-head">
               <table>
                   <thead>
-                      <tr class="row100 head">
-                          <th class="cell100 column1">Nom</th>
-                          <th class="cell100 column2">Description</th>
-                          <th class="cell100 column3">Addresse</th>
+                      <tr className="row100 head">
+                          <th className="cell100 column1">Nom</th>
+                          <th className="cell100 column2">Description</th>
+                          <th className="cell100 column3">Addresse</th>
                       </tr>
                   </thead>
               </table>
           </div>
-          <div class="table100-body js-pscroll ps ps--active-y">
+          <div className="table100-body js-pscroll ps ps--active-y">
               <table>
                   <tbody>
-                      <tr class="row100 body">
-                          <td class="cell100 column1">Like a butterfly</td>
-                          <td class="cell100 column2">Boxing</td>
-                          <td class="cell100 column3">9:00 AM - 11:00 AM</td>
+                      <tr className="row100 body">
+                          <td className="cell100 column1">Like a butterfly</td>
+                          <td className="cell100 column2">Boxing</td>
+                          <td className="cell100 column3">9:00 AM - 11:00 AM</td>
                       </tr>
-                      <tr class="row100 body">
-                          <td class="cell100 column1">Mind &amp; Body</td>
-                          <td class="cell100 column2">Yoga</td>
-                          <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                      <tr className="row100 body">
+                          <td className="cell100 column1">Mind &amp; Body</td>
+                          <td className="cell100 column2">Yoga</td>
+                          <td className="cell100 column3">8:00 AM - 9:00 AM</td>
                       </tr>
-                      <tr class="row100 body">
-                          <td class="cell100 column1">Crit Cardio</td>
-                          <td class="cell100 column2">Gym</td>
-                          <td class="cell100 column3">9:00 AM - 10:00 AM</td>
+                      <tr className="row100 body">
+                          <td className="cell100 column1">Crit Cardio</td>
+                          <td className="cell100 column2">Gym</td>
+                          <td className="cell100 column3">9:00 AM - 10:00 AM</td>
                       </tr>
-                      <tr class="row100 body">
-                          <td class="cell100 column1">Wheel Pose Full Posture</td>
-                          <td class="cell100 column2">Yoga</td>
-                          <td class="cell100 column4">Donna Wilson</td>
+                      <tr className="row100 body">
+                          <td className="cell100 column1">Wheel Pose Full Posture</td>
+                          <td className="cell100 column2">Yoga</td>
+                          <td className="cell100 column4">Donna Wilson</td>
                       </tr>
                      
                   </tbody>
               </table>
-              <div class="ps__rail-x" style={{left: "0px", bottom: "-603px"}}>
-                  <div class="ps__thumb-x" tabindex="0" style={{left: "0px", width: "0px"}}></div>
+              <div className="ps__rail-x" style={{left: "0px", bottom: "-603px"}}>
+                  <div className="ps__thumb-x" tabIndex="0" style={{left: "0px", width: "0px"}}></div>
               </div>
           </div>
       </div>
