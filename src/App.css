@@ -30,6 +30,30 @@
   /* border: solid #eee 2px; */
   outline: none;
 }
+.btn.primary
+{
+  border: 1px solid #000;
+
+  background-color: white;
+  color: #000;
+}
+
+.donation
+{
+  display: flex;
+
+}
+.donation input 
+{
+  padding: 8px;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+.btn.primary:hover 
+{
+  background-color: #000;
+  color: white;
+}
 
 .input:focus , .text-area:focus{
   border: 1px solid #000;

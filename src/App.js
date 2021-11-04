@@ -4,6 +4,7 @@ import web3 from './web3';
 import donation  from './donation';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Modal, Button } from "react-bootstrap";
 
 toast.configure();
 
@@ -13,47 +14,65 @@ class App extends Component
   state = {
     organizationLength: "",
     value: "",
-    message: "",
     organizationName: "",
     organizationResidency: "",
     organizationDescription: "",
-
+    isOpen: false,
+    organizations: [],
+    isLoading: true,
+    currentOrganization: {},
+    isDonationOpened: false
   };
 
-  organization = {
-    name: "",
-    description: "",
-    residency: "",
-    amount: "",
-  }
+  
+  openModal(currentOrganization)
+  { 
+    console.log(currentOrganization);
+    this.setState({isOpen: true});  
+    this.setState({currentOrganization})
+  };
 
-  organizations = [];
+  closeModal = () => { this.setState({isOpen: false}) };
 
+  
   gettingAllOrganizations = async ()=>
   {
-    for(let i = 0; i< this.state.length; i++)
+    let organizations = []; 
+    for(let i = 0; i < this.state.organizationLength; i++)
     {
-      const singleOrganization = await donation.methods.orginations(i).call();
-      this.organizations.push(singleOrganization);
-    }    
-    console.log(this.organizations);
+      const singleOrganization = await donation.methods.getOrganization(i).call();
+      organizations.push(
+      {
+        address: singleOrganization[0],
+        name: singleOrganization[1],
+        description: singleOrganization[2],
+        residence: singleOrganization[3],
+        amount: singleOrganization[4]
+      });
+    } 
+    this.setState({organizations});
   }
   
   componentDidMount = async ()=>
   {
     const organizationLength = await donation.methods.getOrganizationLength().call();
+
     this.setState({organizationLength});
+
     this.gettingAllOrganizations();
+
+    this.setState({isLoading: false});
 
   }
 
   onCreateOrganization = async event =>
   {
     event.preventDefault();
+
     const accounts = await web3.eth.getAccounts();
-    toast.promise( async()=>
+    toast.promise( async ()=>
     {
-      await donation.methods.createOrganization(this.organization.name,this.organization.description, this.organization.residency)
+      await donation.methods.createOrganization(this.state.organizationName,this.state.organizationDescription, this.state.organizationResidency)
                             .send(
                             {
                               from: accounts[0], 
@@ -66,36 +85,44 @@ class App extends Component
     });
   }
 
-  onDonate = async event =>
+  openDonation = () => { this.setState({isDonationOpened: true}) };
+
+  onDonate = async () =>
   {
-    event.preventDefault();
+    this.setState({isOpen: false});
+    if(!this.state.currentOrganization.address || Number(this.state.value) <= 0)
+    {
+      return null;
+    }
     this.setState({message: "Chargement...."})
     const accounts = await web3.eth.getAccounts();
-    try 
+    toast.promise( async ()=>
     {
-      toast("Chargement...",{autoClose: false});
-      await donation.methods.donate(this.organization.donationReceiver)
+      await donation.methods.donate(this.state.currentOrganization.address)
                     .send(
                     {
                       from: accounts[0],
                       value: web3.utils.toWei(this.state.value, "ether")
                     });
-
-      toast.success("Donation réussie...",{autoClose: 2000});
-    }catch(error)
+    },
     {
-      toast.error("Erreur...",{autoClose: 2000});
-
-    }
+      pending: "Chargement...",
+      success: "Donation réussie",
+      error: "Erreur lors de la donation"
+    });
   }
 
   render() 
   {
     return (
+      
       <div className="container">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous"/>
-        <p>il y a {this.state.organizationLength} organisation(s)</p>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossOrigin="anonymous"/>
+
+      {
+        this.isLoading? <p>Chargement...</p> : 
         <div className="container">
+          <p>il y a {this.state.organizationLength} organisation(s)</p>
           <div className="center size-sm">
             <div className="card shadow-sm card-body " > 
               <form className="px-4" onSubmit={this.onCreateOrganization}>
@@ -140,54 +167,95 @@ class App extends Component
               </form>
           </div>
           </div>
-          
-        </div>
-
-      <div>
-      <div className="table100 ver2 m-b-110">
-          <div className="table100-head">
-              <table>
-                  <thead>
-                      <tr className="row100 head">
+        <div>
+        {
+          this.state.organizations.length > 0?
+          <div className="table100 ver2 m-b-110">
+            <div className="table100-head">
+                <table>
+                    <thead>
+                        <tr className="row100 head">
                           <th className="cell100 column1">Nom</th>
                           <th className="cell100 column2">Description</th>
-                          <th className="cell100 column3">Addresse</th>
-                      </tr>
-                  </thead>
-              </table>
-          </div>
-          <div className="table100-body js-pscroll ps ps--active-y">
+                          <th className="cell100 column3">Résidence</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div className="table100-body js-pscroll ps ps--active-y">
               <table>
-                  <tbody>
-                      <tr className="row100 body">
-                          <td className="cell100 column1">Like a butterfly</td>
-                          <td className="cell100 column2">Boxing</td>
-                          <td className="cell100 column3">9:00 AM - 11:00 AM</td>
-                      </tr>
-                      <tr className="row100 body">
-                          <td className="cell100 column1">Mind &amp; Body</td>
-                          <td className="cell100 column2">Yoga</td>
-                          <td className="cell100 column3">8:00 AM - 9:00 AM</td>
-                      </tr>
-                      <tr className="row100 body">
-                          <td className="cell100 column1">Crit Cardio</td>
-                          <td className="cell100 column2">Gym</td>
-                          <td className="cell100 column3">9:00 AM - 10:00 AM</td>
-                      </tr>
-                      <tr className="row100 body">
-                          <td className="cell100 column1">Wheel Pose Full Posture</td>
-                          <td className="cell100 column2">Yoga</td>
-                          <td className="cell100 column4">Donna Wilson</td>
-                      </tr>
-                     
-                  </tbody>
+                <tbody>
+                {
+                  this.state.organizations.map((singleOrganization,i) =>
+                  (
+                    <tr key={i} onClick={() => this.openModal(singleOrganization)}>
+                      <td className="cell100 column1" key={0}>{singleOrganization.name}</td>
+                      <td className="cell100 column1" key={1}>{singleOrganization.description}</td>
+                      <td className="cell100 column1" key={3}>{singleOrganization.residence}</td>
+                    </tr>
+                ))}                  
+                </tbody>
               </table>
               <div className="ps__rail-x" style={{left: "0px", bottom: "-603px"}}>
-                  <div className="ps__thumb-x" tabIndex="0" style={{left: "0px", width: "0px"}}></div>
+                <div className="ps__thumb-x" tabIndex="0" style={{left: "0px", width: "0px"}}></div>
               </div>
+            </div>
+          </div>:
+          <p>Il n'y a pas encore d'organisation</p>
+        }
           </div>
-      </div>
-</div>
+          <Modal show={this.state.isOpen === true}>
+            <Modal.Header closeButton>
+                <Modal.Title>Modal heading</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <h1>{this.state.currentOrganization.name}</h1>
+                <p>{this.state.currentOrganization.description}</p>
+                <p>{this.state.currentOrganization.amount}</p>
+                <small>{this.state.currentOrganization.residence}</small>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button 
+                  variant="secondary"
+                  onClick={this.closeModal}
+                  >Fermer
+              </Button>
+              {
+                this.state.isDonationOpened? 
+                <div className="donation">
+                  <div>
+                    <input type="number"
+                        min="1"
+                        max="10"
+                        width="5"
+                        value={this.state.value}
+                        onChange={ event => this.setState({value: event.target.value})}/>
+                  </div>
+                  <Button 
+                    className="btn primary"
+                    variant="secondary"
+                    onClick={this.onDonate}
+                    >Valider
+                  </Button>
+                </div>
+                :
+                <Button 
+                  className="btn primary"
+                  variant="secondary"
+                  onClick={this.openDonation}
+                  >Faire un don
+                </Button>
+              }
+              
+
+              
+            </Modal.Footer>
+        </Modal>
+        </div>
+      }
+        
+
+      
         
       </div>
   )}
