@@ -57,15 +57,3 @@ header .connection {
     justify-content: space-between;
     align-items: center;
 }
-header .connection .link {
-    padding: 0.4em 0.6em;
-    cursor: pointer;
-}
-
-header .connection .link.two {
-    background-color: green;
-    border-radius: 50%;
-    color: white;
-    font-size: 20px;
-}
-

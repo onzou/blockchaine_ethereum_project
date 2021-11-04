@@ -125,7 +125,7 @@ class App extends Component
       {
         this.isLoading? <p>Chargement...</p> : 
         <div className="container">
-          <p>il y a {this.state.organizationLength} organisation(s)</p>
+          <p>Il y a au total <strong>{this.state.organizationLength}</strong> organisation(s)</p>
           <div className="center size-sm">
             <div className="card shadow-sm card-body " > 
               <form className="px-4" onSubmit={this.onCreateOrganization}>
@@ -209,7 +209,7 @@ class App extends Component
           </div>
           <Modal show={this.state.isOpen === true}>
             <Modal.Header closeButton>
-                <Modal.Title>Modal heading</Modal.Title>
+                <Modal.Title>Donation</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <h1>{this.state.currentOrganization.name}</h1>
