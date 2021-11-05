@@ -124,21 +124,19 @@ class App extends Component
       </Header>
       {
         this.isLoading? <p>Chargement...</p> : 
-        <div className="container">
-          <p>Il y a au total <strong>{this.state.organizationLength}</strong> organisation(s)</p>
+        <div className="container mt-5">
           <div className="center size-sm">
-            <div className="card shadow-sm card-body " > 
-              <form className="px-4" onSubmit={this.onCreateOrganization}>
+              <form className="card shadow mb-3" onSubmit={this.onCreateOrganization}>
 
-                <div className="card-title h3"> 
+                <div className="card-header bg-dark text-white h3"> 
                   Création de compte pour votre organisation
-                  <hr className="divider"/>
                 </div>
 
+                <div className="card-body">
                 <div className="form-group mt-3 mb-2">
                       <label htmlFor="organization_name" className="form-label">Nom de l'organisation</label>
                       <input required type="text"
-                            className="shadow-sm input"
+                            className="shadow input"
                             placeholder="Entrez le nom de votre organisation"
                             onChange={event => this.setState({organizationName: event.target.value})}
                             value={this.state.organizationName}
@@ -150,7 +148,7 @@ class App extends Component
                   <input required type="text"
                         onChange={event => this.setState({organizationResidency: event.target.value})}
                         value={this.state.organizationResidency}
-                        className="shadow-sm input" 
+                        className="shadow input" 
                         placeholder="Entrez l'adresse de l'organisation" 
                         name="residency" id="residency"/>
                 </div>
@@ -158,7 +156,7 @@ class App extends Component
                 <div className="form-group my-2">
                   <label htmlFor="description" className="form-label">Description</label>
                   <textarea required  type="text" row="20" maxLength="100"
-                            className="shadow-sm text-area"
+                            className="shadow text-area"
                             placeholder="Entrez une brève description de votre organisation" 
                             onChange={event => this.setState({organizationDescription: event.target.value})}
                             value={this.state.organizationDescription}
@@ -166,26 +164,28 @@ class App extends Component
                             id="description"></textarea>
                 </div>
                 <button type="submit"  className="but shadow-sm">S'inscrire</button>
+                </div>
 
               </form>
           </div>
-          </div>
         <div>
+        <p className="alert alert-dark mt-2 shadow">Il y a au total <strong>{this.state.organizationLength}</strong> organisation(s)</p>
+
         {
           this.state.organizations.length > 0?
-          <div className="table100 ver2 m-b-110">
-            <div className="table100-head">
+          <div className="table100 shadow ver2 m-b-110">
+            <div className="table100-head bg-dark">
                 <table>
                     <thead>
-                        <tr className="row100 head">
-                          <th className="cell100 column1">Nom</th>
-                          <th className="cell100 column2">Description</th>
-                          <th className="cell100 column3">Résidence</th>
+                        <tr className="row100 head shadow">
+                          <th className="cell100 column1 text-white">Nom</th>
+                          <th className="cell100 column2 text-white">Description</th>
+                          <th className="cell100 column3 text-white">Résidence</th>
                         </tr>
                     </thead>
                 </table>
             </div>
-            <div className="table100-body js-pscroll ps ps--active-y">
+            <div className="table100-body  js-pscroll ps ps--active-y">
               <table>
                 <tbody>
                 {
@@ -211,11 +211,15 @@ class App extends Component
             <Modal.Header closeButton>
                 <Modal.Title>Donation</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
-                <h1>{this.state.currentOrganization.name}</h1>
+            <Modal.Body className="card-body">
+              <div className="form-group">
+                <label>Organisation</label>
+                <h3 className="alert alert-sm alert-default shadow-ms">{this.state.currentOrganization.name}</h3>
                 <p>{this.state.currentOrganization.description}</p>
-                <p>{this.state.currentOrganization.amount}</p>
-                <small>{this.state.currentOrganization.residence}</small>
+              </div>
+                Solde: <strong>{this.state.currentOrganization.amount} ether</strong><br />
+                <br />
+                Adresse : <strong>{this.state.currentOrganization.residence}</strong>
             </Modal.Body>
             <Modal.Footer>
               <Button 

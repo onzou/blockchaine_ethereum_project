@@ -1,0 +1,787 @@
+2021-11-05 09:28:06.727  INFO 23131 --- [main] c.h.a.c.CustomScannersServiceApplication : Starting CustomScannersServiceApplication on linux with PID 23131 (/home/yuri/.vscode/extensions/hcltechnologies.hclappscancodesweep-1.1.4/lib/custom-scanners-service-1.0.11.jar started by yuri in /home/yuri/Documents/blockchaine_ethereum_project)
+2021-11-05 09:28:06.776  INFO 23131 --- [main] c.h.a.c.CustomScannersServiceApplication : No active profile set, falling back to default profiles: default
+2021-11-05 09:28:14.386  INFO 23131 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9221 (http)
+2021-11-05 09:28:14.435  INFO 23131 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-05 09:28:14.439  INFO 23131 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2021-11-05 09:28:14.643  INFO 23131 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-05 09:28:14.644 DEBUG 23131 --- [main] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2021-11-05 09:28:14.645  INFO 23131 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 7500 ms
+2021-11-05 09:28:15.169 DEBUG 23131 --- [main] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: filterRegistrationBean urls=[/*] order=-2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2021-11-05 09:28:15.185 DEBUG 23131 --- [main] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2021-11-05 09:28:22.335 DEBUG 23131 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2021-11-05 09:28:22.578  INFO 23131 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-11-05 09:28:23.145  INFO 23131 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-05 09:28:23.638  INFO 23131 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-11-05 09:28:23.747 DEBUG 23131 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2021-11-05 09:28:24.004  INFO 23131 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2021-11-05 09:28:24.249 DEBUG 23131 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2021-11-05 09:28:24.310 DEBUG 23131 --- [main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2021-11-05 09:28:24.884  INFO 23131 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2021-11-05 09:28:25.004  INFO 23131 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2021-11-05 09:28:25.176  INFO 23131 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2021-11-05 09:28:26.594  INFO 23131 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9221 (http) with context path ''
+2021-11-05 09:28:26.605  INFO 23131 --- [main] c.h.a.c.CustomScannersServiceApplication : Started CustomScannersServiceApplication in 24.022 seconds (JVM running for 28.58)
+2021-11-05 09:28:27.035  INFO 23131 --- [http-nio-9221-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-05 09:28:27.052  INFO 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-05 09:28:27.056 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2021-11-05 09:28:27.094 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-11-05 09:28:27.096  INFO 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 40 ms
+2021-11-05 09:28:27.181 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/v1/scanRules", parameters={}
+2021-11-05 09:28:27.219 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getScanRules(String[])
+2021-11-05 09:28:27.390 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:28:27.444 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{Golang={com.ouncelabs.languagelite.golang.rules.WeakCryptoGolang=CustomScannersServiceScanRule{rule (truncated)...]
+2021-11-05 09:28:27.627 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:30:01.025 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:30:01.075 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:30:01.374 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:30:01.383 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:30:01.402 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:30:16.386 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:30:16.390 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:30:16.416 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:30:16.417 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:30:16.421 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:30:36.359 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:30:36.361 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:30:36.387 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:30:36.389 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:30:36.393 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:31:13.055 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:31:13.058 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:31:13.123 DEBUG 23131 --- [http-nio-9221-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:31:13.145 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:31:13.147 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@45cecdd (truncated)...]
+2021-11-05 09:31:13.163 DEBUG 23131 --- [http-nio-9221-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:31:13.165 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:31:32.165 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:31:32.168 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:31:32.175 DEBUG 23131 --- [http-nio-9221-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:31:32.177 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:31:32.178 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@262531a (truncated)...]
+2021-11-05 09:31:32.179 DEBUG 23131 --- [http-nio-9221-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:31:32.180 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:31:44.834 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:31:44.836 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:31:44.840 DEBUG 23131 --- [http-nio-9221-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:31:44.841 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:31:44.843 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@2a356e0 (truncated)...]
+2021-11-05 09:31:44.845 DEBUG 23131 --- [http-nio-9221-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:31:44.846 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:32:03.723 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:32:03.724 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:32:03.726 DEBUG 23131 --- [http-nio-9221-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:32:03.727 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:32:03.727 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@7c44372 (truncated)...]
+2021-11-05 09:32:03.728 DEBUG 23131 --- [http-nio-9221-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:32:03.729 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:32:35.044 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:32:35.048 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:32:35.066 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:32:35.068 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:32:35.071 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:34:27.693 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:34:27.696 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:34:27.713 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:34:27.715 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:34:27.717 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:34:39.564 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:34:39.566 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:34:39.573 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:34:39.574 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:34:39.575 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:34:45.727 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:34:45.729 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:34:45.771 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:34:45.849 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:34:45.850 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:34:56.469 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:34:56.471 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:34:56.483 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:34:56.485 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:34:56.488 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:35:31.735 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:35:31.751 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:35:32.461  WARN 23131 --- [http-nio-9221-exec-3] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:35:32.466 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:35:32.474 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:35:32.864 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:35:44.912 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:35:44.913 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:35:44.914 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:35:44.952 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:35:44.954 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:35:44.975 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:35:44.980 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:35:45.015 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:35:45.019 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:35:45.030 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:35:49.701 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:35:49.703 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:35:49.704 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:35:49.705 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:35:49.712 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:35:49.771 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:35:49.777 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:35:49.783 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:35:49.783 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:35:49.785 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:36:09.063 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:36:09.070 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:36:09.071 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:36:09.072 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:36:09.074 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:36:09.156 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:36:09.174 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:36:09.243 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:36:09.245 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:36:09.248 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:36:21.118 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:36:21.121 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:36:21.122 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:36:21.122 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:36:21.124 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:36:21.136 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:36:21.137 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:36:21.181 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:36:21.182 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:36:21.183 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:36:48.487 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:36:48.490 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:36:48.793  WARN 23131 --- [http-nio-9221-exec-4] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:36:48.799 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:36:48.803 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:36:48.815 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:37:10.776 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:37:10.777 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:37:10.778 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:37:10.779 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:37:10.786 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:37:10.787 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:37:10.791 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:37:10.805 DEBUG 23131 --- [http-nio-9221-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:37:10.809 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:37:10.810 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@34b590f (truncated)...]
+2021-11-05 09:37:10.814 DEBUG 23131 --- [http-nio-9221-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:37:10.818 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:37:15.097 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:37:15.098 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:37:15.099 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:37:15.099 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:37:15.100 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:37:15.125 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:37:15.126 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:37:15.127 DEBUG 23131 --- [http-nio-9221-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:37:15.128 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:37:15.129 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@24f2953 (truncated)...]
+2021-11-05 09:37:15.130 DEBUG 23131 --- [http-nio-9221-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:37:15.130 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:37:18.483 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:37:18.484 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:37:18.485 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:37:18.485 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:37:18.486 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:37:18.496 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:37:18.497 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:37:18.498 DEBUG 23131 --- [http-nio-9221-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:37:18.498 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:37:18.499 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@1b2b964 (truncated)...]
+2021-11-05 09:37:18.500 DEBUG 23131 --- [http-nio-9221-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:37:18.500 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:37:21.779 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:37:21.780 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:37:21.781 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:37:21.782 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:37:21.805 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:37:21.808 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:37:21.809 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:37:21.814 DEBUG 23131 --- [http-nio-9221-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:37:21.819 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:37:21.820 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@757468d (truncated)...]
+2021-11-05 09:37:21.823 DEBUG 23131 --- [http-nio-9221-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:37:21.825 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:37:24.694 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:37:24.695 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:37:24.696 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:37:24.697 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:37:24.698 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:37:24.702 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:37:24.704 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:37:24.705 DEBUG 23131 --- [http-nio-9221-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:37:24.706 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:37:24.706 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@28d91c4 (truncated)...]
+2021-11-05 09:37:24.707 DEBUG 23131 --- [http-nio-9221-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:37:24.708 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:37:27.953 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:37:27.954 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:37:27.961 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:37:27.962 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:37:27.963 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:37:27.965 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:37:27.965 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:37:27.967 DEBUG 23131 --- [http-nio-9221-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:37:27.968 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:37:27.968 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@72bd479 (truncated)...]
+2021-11-05 09:37:27.969 DEBUG 23131 --- [http-nio-9221-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:37:27.969 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:37:39.574 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:37:39.575 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:37:39.576 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:37:39.577 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:37:39.578 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:37:39.579 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:37:39.580 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:37:39.583 DEBUG 23131 --- [http-nio-9221-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:37:39.583 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:37:39.584 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@20cd057 (truncated)...]
+2021-11-05 09:37:39.588 DEBUG 23131 --- [http-nio-9221-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:37:39.589 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:37:47.225 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:37:47.226 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:37:47.227 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:37:47.227 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:37:47.231 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:37:47.241 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:37:47.242 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:37:47.253 DEBUG 23131 --- [http-nio-9221-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:37:47.254 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:37:47.254 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@15ec7b5 (truncated)...]
+2021-11-05 09:37:47.258 DEBUG 23131 --- [http-nio-9221-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:37:47.259 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:38:23.235 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:38:23.236 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:38:23.241 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:38:23.241 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:38:23.242 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:38:23.243 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:38:23.245 DEBUG 23131 --- [http-nio-9221-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:38:23.246 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:38:23.246 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@665e302 (truncated)...]
+2021-11-05 09:38:23.249 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:38:23.256 DEBUG 23131 --- [http-nio-9221-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:38:23.257 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:40:32.380 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:40:32.390 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:40:33.117  WARN 23131 --- [http-nio-9221-exec-4] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:40:33.119 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:40:33.119 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:40:33.151 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:40:52.595 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:40:52.605 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:40:53.328  WARN 23131 --- [http-nio-9221-exec-2] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:40:53.329 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:40:53.331 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:40:53.359 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:41:42.580 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:41:42.581 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:41:42.888  WARN 23131 --- [http-nio-9221-exec-3] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:41:42.892 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:41:42.894 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:41:42.905 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:41:56.516 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:41:56.520 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:41:56.869  WARN 23131 --- [http-nio-9221-exec-5] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:41:56.871 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:41:56.877 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:41:56.893 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:42:11.844 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:42:11.849 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:42:12.020  WARN 23131 --- [http-nio-9221-exec-6] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:42:12.030 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:42:12.031 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:42:12.048 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:42:33.100 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:42:33.103 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:42:33.438  WARN 23131 --- [http-nio-9221-exec-7] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:42:33.439 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:42:33.445 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:42:33.455 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:42:54.841 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:42:54.843 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:42:55.557  WARN 23131 --- [http-nio-9221-exec-8] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:42:55.560 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:42:55.561 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:42:55.591 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:43:12.562 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:43:12.563 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:43:12.809  WARN 23131 --- [http-nio-9221-exec-9] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:43:12.812 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:43:12.813 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:43:12.822 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:45:04.958 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:45:04.990 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:45:05.398  WARN 23131 --- [http-nio-9221-exec-10] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:45:05.406 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:45:05.406 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:45:05.424 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:45:18.088 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:45:18.100 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:45:18.776  WARN 23131 --- [http-nio-9221-exec-1] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:45:18.783 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:45:18.786 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:45:18.804 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:45:42.346 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:45:42.348 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:45:42.487  WARN 23131 --- [http-nio-9221-exec-4] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:45:42.488 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:45:42.488 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:45:42.491 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:46:18.142 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:46:18.143 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:46:18.425  WARN 23131 --- [http-nio-9221-exec-2] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:46:18.432 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:46:18.436 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:46:18.439 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:46:30.907 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:46:30.909 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:46:31.170  WARN 23131 --- [http-nio-9221-exec-3] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:46:31.171 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:46:31.172 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:46:31.177 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:46:43.146 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:46:43.147 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:46:43.380  WARN 23131 --- [http-nio-9221-exec-5] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:46:43.382 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:46:43.384 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:46:43.427 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:46:55.982 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:46:55.983 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:46:56.182  WARN 23131 --- [http-nio-9221-exec-6] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:46:56.183 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:46:56.183 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:46:56.187 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:47:11.902 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:47:11.903 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:47:12.137  WARN 23131 --- [http-nio-9221-exec-7] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:47:12.139 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:47:12.140 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:47:12.148 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:47:48.573 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:47:48.574 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:47:48.848  WARN 23131 --- [http-nio-9221-exec-8] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:47:48.908 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:47:48.908 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:47:48.927 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:49:01.102 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:49:01.104 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:49:01.195  WARN 23131 --- [http-nio-9221-exec-9] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:49:01.196 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:49:01.196 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:49:01.198 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:49:13.596 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:49:13.600 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:49:13.735  WARN 23131 --- [http-nio-9221-exec-10] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:49:13.737 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:49:13.738 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:49:13.750 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:51:31.747 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:51:31.750 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:51:32.189  WARN 23131 --- [http-nio-9221-exec-1] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:51:32.206 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:51:32.208 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:51:32.250 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:51:42.488 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:51:42.489 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:51:42.751  WARN 23131 --- [http-nio-9221-exec-4] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 09:51:42.763 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:51:42.766 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 09:51:42.826 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:53:15.072 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:53:15.077 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:53:15.080 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:53:15.082 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:53:15.083 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:53:15.083 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:53:15.085 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:53:15.085 DEBUG 23131 --- [http-nio-9221-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:53:15.086 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:53:15.086 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@7363194 (truncated)...]
+2021-11-05 09:53:15.087 DEBUG 23131 --- [http-nio-9221-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:53:15.087 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:55:47.345 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:55:47.346 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:55:47.347 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:55:47.347 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:55:47.347 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:55:47.347 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:55:47.357 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:55:47.393  WARN 23131 --- [http-nio-9221-exec-5] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : URL Injection using v-bind:href
+2021-11-05 09:55:47.393 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:55:47.393 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='header.js', lineNumber='10', (truncated)...]
+2021-11-05 09:55:47.397 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:56:03.667 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:56:03.669 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:56:03.675 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:56:03.676 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:56:03.677 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:56:03.677 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:56:03.678 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:56:03.689  WARN 23131 --- [http-nio-9221-exec-8] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : URL Injection using v-bind:href
+2021-11-05 09:56:03.690 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:56:03.690 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='header.js', lineNumber='10', (truncated)...]
+2021-11-05 09:56:03.694 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:56:33.401 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:56:33.402 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:56:33.403 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:56:33.403 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:56:33.409 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:56:33.410 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:56:33.411 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:56:33.427 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:56:33.428 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:56:33.435 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:58:52.624 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:58:52.625 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:58:52.626 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:58:52.626 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:58:52.627 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:58:52.627 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:58:52.627 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:58:52.631 DEBUG 23131 --- [http-nio-9221-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 09:58:52.632 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 09:58:52.632 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@61b9b3b]
+2021-11-05 09:58:52.633 DEBUG 23131 --- [http-nio-9221-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 09:58:52.634 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 09:59:30.302 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:59:30.303 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:59:30.303 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:59:30.303 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:59:30.306 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:59:30.307 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:59:30.307 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:59:30.317 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:59:30.317 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:59:30.319 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:59:56.234 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 09:59:56.237 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 09:59:56.238 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:59:56.238 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 09:59:56.239 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 09:59:56.242 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 09:59:56.242 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 09:59:56.259 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 09:59:56.260 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[], articles={}}]
+2021-11-05 09:59:56.262 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:00:27.243 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:00:27.244 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:00:27.483  WARN 23131 --- [http-nio-9221-exec-7] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:00:27.484 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:00:27.486 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:00:27.499 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:00:40.058 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:00:40.059 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:00:40.243  WARN 23131 --- [http-nio-9221-exec-8] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:00:40.244 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:00:40.245 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:00:40.247 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:01:18.078 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:01:18.078 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:01:18.195  WARN 23131 --- [http-nio-9221-exec-9] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:01:18.197 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:01:18.201 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:01:18.204 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:02:02.053 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:02:02.054 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:02:02.273  WARN 23131 --- [http-nio-9221-exec-10] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:02:02.274 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:02:02.275 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:02:02.277 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:02:24.902 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:02:24.903 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:02:25.196  WARN 23131 --- [http-nio-9221-exec-1] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:02:25.199 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:02:25.203 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:02:25.205 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:02:35.223 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:02:35.224 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:02:35.511  WARN 23131 --- [http-nio-9221-exec-4] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:02:35.512 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:02:35.514 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:02:35.519 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:02:41.019 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:02:41.020 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:02:41.200  WARN 23131 --- [http-nio-9221-exec-2] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:02:41.204 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:02:41.205 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:02:41.215 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:02:49.727 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 10:02:49.728 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 10:02:49.730 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:02:49.730 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 10:02:49.730 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:02:49.736 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:02:49.737 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:02:49.739 DEBUG 23131 --- [http-nio-9221-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 10:02:49.740 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 10:02:49.740 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@69dfc12 (truncated)...]
+2021-11-05 10:02:49.743 DEBUG 23131 --- [http-nio-9221-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 10:02:49.744 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 10:03:05.524 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 10:03:05.525 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 10:03:05.527 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:03:05.527 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 10:03:05.534 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:03:05.535 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:03:05.538 DEBUG 23131 --- [http-nio-9221-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 10:03:05.540 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 10:03:05.540 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@1c4ee36 (truncated)...]
+2021-11-05 10:03:05.542 DEBUG 23131 --- [http-nio-9221-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 10:03:05.542 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 10:03:05.543 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:07:11.337 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:07:11.341 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:07:11.539  WARN 23131 --- [http-nio-9221-exec-8] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:07:11.540 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:07:11.541 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:07:11.546 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:07:20.471 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:07:20.471 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:07:20.741  WARN 23131 --- [http-nio-9221-exec-9] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:07:20.750 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:07:20.751 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:07:20.757 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:07:27.303 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 10:07:27.304 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 10:07:27.305 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:07:27.305 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 10:07:27.311 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:07:27.312 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:07:27.314 DEBUG 23131 --- [http-nio-9221-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 10:07:27.314 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 10:07:27.314 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@6563b38 (truncated)...]
+2021-11-05 10:07:27.315 DEBUG 23131 --- [http-nio-9221-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 10:07:27.315 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 10:07:27.320 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:07:56.856 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 10:07:56.857 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 10:07:56.857 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:07:56.858 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 10:07:56.859 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:07:56.859 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:07:56.860 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:07:56.863 DEBUG 23131 --- [http-nio-9221-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 10:07:56.865 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 10:07:56.867 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@2eea330 (truncated)...]
+2021-11-05 10:07:56.868 DEBUG 23131 --- [http-nio-9221-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 10:07:56.868 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 10:09:15.238 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 10:09:15.240 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 10:09:15.240 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:09:15.241 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 10:09:15.241 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:09:15.241 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:09:15.242 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:09:15.244 DEBUG 23131 --- [http-nio-9221-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 10:09:15.248 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 10:09:15.248 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@2e00753 (truncated)...]
+2021-11-05 10:09:15.251 DEBUG 23131 --- [http-nio-9221-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 10:09:15.251 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 10:10:24.269 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 10:10:24.271 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 10:10:24.272 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:10:24.272 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:10:24.272 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 10:10:24.272 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:10:24.273 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:10:24.274 DEBUG 23131 --- [http-nio-9221-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 10:10:24.275 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 10:10:24.276 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@2c7a084 (truncated)...]
+2021-11-05 10:10:24.277 DEBUG 23131 --- [http-nio-9221-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 10:10:24.277 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 10:11:01.809 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:11:01.810 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:11:01.923  WARN 23131 --- [http-nio-9221-exec-8] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:11:01.923 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:11:01.924 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:11:01.927 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:11:11.096 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:11:11.099 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:11:11.285  WARN 23131 --- [http-nio-9221-exec-9] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:11:11.290 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:11:11.291 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:11:11.302 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:11:17.436 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:11:17.437 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:11:17.609  WARN 23131 --- [http-nio-9221-exec-10] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:11:17.611 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:11:17.612 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:11:17.620 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:11:39.877 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:11:39.878 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:11:40.187  WARN 23131 --- [http-nio-9221-exec-1] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:11:40.188 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:11:40.190 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:11:40.194 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:11:49.610 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:11:49.612 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:11:49.830  WARN 23131 --- [http-nio-9221-exec-4] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:11:49.831 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:11:49.833 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:11:49.843 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:12:03.016 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:12:03.017 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:12:03.277  WARN 23131 --- [http-nio-9221-exec-2] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:12:03.279 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:12:03.280 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:12:03.308 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:12:10.967 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:12:10.969 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:12:11.363  WARN 23131 --- [http-nio-9221-exec-3] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:12:11.365 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:12:11.366 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:12:11.377 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:12:15.466 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:12:15.467 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:12:15.701  WARN 23131 --- [http-nio-9221-exec-6] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:12:15.704 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:12:15.705 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:12:15.709 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:12:18.189 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:12:18.190 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:12:18.565  WARN 23131 --- [http-nio-9221-exec-7] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:12:18.566 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:12:18.567 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:12:18.570 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:12:27.329 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:12:27.330 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:12:27.656  WARN 23131 --- [http-nio-9221-exec-5] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:12:27.657 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:12:27.659 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:12:27.668 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:12:39.017 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:12:39.037 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:12:39.450  WARN 23131 --- [http-nio-9221-exec-8] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:12:39.452 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:12:39.453 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:12:39.476 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:12:47.092 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:12:47.093 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:12:47.436  WARN 23131 --- [http-nio-9221-exec-9] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:12:47.438 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:12:47.440 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:12:47.446 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:12:50.564 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:12:50.565 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:12:50.833  WARN 23131 --- [http-nio-9221-exec-10] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:12:50.848 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:12:50.848 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:12:50.857 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:13:05.483 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:13:05.486 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:13:05.999  WARN 23131 --- [http-nio-9221-exec-1] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:13:06.007 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:13:06.009 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:13:06.023 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:13:15.134 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:13:15.135 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:13:15.498  WARN 23131 --- [http-nio-9221-exec-4] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:13:15.500 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:13:15.501 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:13:15.545 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:13:26.993 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:13:26.994 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:13:27.200  WARN 23131 --- [http-nio-9221-exec-2] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:13:27.202 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:13:27.203 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:13:27.207 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:13:58.659 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:13:58.659 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:13:58.851  WARN 23131 --- [http-nio-9221-exec-3] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:13:58.853 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:13:58.869 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:13:58.886 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:14:10.530 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:14:10.531 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:14:10.937  WARN 23131 --- [http-nio-9221-exec-6] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:14:10.949 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:14:10.951 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:14:10.954 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:14:23.209 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:14:23.210 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:14:23.501  WARN 23131 --- [http-nio-9221-exec-7] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:14:23.503 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:14:23.504 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:14:23.522 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:14:37.297 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:14:37.298 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:14:37.557  WARN 23131 --- [http-nio-9221-exec-5] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:14:37.558 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:14:37.559 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:14:37.571 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:14:44.928 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:14:44.930 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:14:45.206  WARN 23131 --- [http-nio-9221-exec-8] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:14:45.207 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:14:45.208 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:14:45.211 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:14:53.333 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:14:53.333 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:14:53.725  WARN 23131 --- [http-nio-9221-exec-9] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:14:53.726 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:14:53.726 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:14:53.729 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:14:58.523 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:14:58.524 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:14:58.843  WARN 23131 --- [http-nio-9221-exec-10] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:14:58.876 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:14:58.894 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:14:58.921 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:15:08.545 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:15:08.545 DEBUG 23131 --- [http-nio-9221-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:15:08.841  WARN 23131 --- [http-nio-9221-exec-1] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:15:08.842 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:15:08.842 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:15:08.844 DEBUG 23131 --- [http-nio-9221-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:15:16.003 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:15:16.004 DEBUG 23131 --- [http-nio-9221-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:15:16.133  WARN 23131 --- [http-nio-9221-exec-4] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:15:16.134 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:15:16.135 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:15:16.140 DEBUG 23131 --- [http-nio-9221-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:15:20.098 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:15:20.099 DEBUG 23131 --- [http-nio-9221-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:15:20.349  WARN 23131 --- [http-nio-9221-exec-2] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:15:20.351 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:15:20.352 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:15:20.357 DEBUG 23131 --- [http-nio-9221-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:15:33.742 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:15:33.743 DEBUG 23131 --- [http-nio-9221-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:15:34.017  WARN 23131 --- [http-nio-9221-exec-3] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:15:34.019 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:15:34.020 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:15:34.024 DEBUG 23131 --- [http-nio-9221-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:15:45.500 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:15:45.501 DEBUG 23131 --- [http-nio-9221-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:15:45.825  WARN 23131 --- [http-nio-9221-exec-6] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:15:45.826 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:15:45.827 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:15:45.830 DEBUG 23131 --- [http-nio-9221-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:16:08.822 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:16:08.823 DEBUG 23131 --- [http-nio-9221-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:16:09.397  WARN 23131 --- [http-nio-9221-exec-7] c.h.a.c.service.ArticleProvider          : Aucun article trouvÃ© pour vulnNameÂ : Private Data Logged Sink
+2021-11-05 10:16:09.400 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:16:09.403 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [CustomScannerServiceResult{findings=[CustomScannersServiceFinding{file='App.js', lineNumber='31', co (truncated)...]
+2021-11-05 10:16:09.413 DEBUG 23131 --- [http-nio-9221-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:18:10.789 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 10:18:10.790 DEBUG 23131 --- [http-nio-9221-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 10:18:10.791 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:18:10.791 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 10:18:10.792 DEBUG 23131 --- [http-nio-9221-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:18:10.799 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:18:10.800 DEBUG 23131 --- [http-nio-9221-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:18:10.802 DEBUG 23131 --- [http-nio-9221-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 10:18:10.804 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 10:18:10.804 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@2e095b1 (truncated)...]
+2021-11-05 10:18:10.805 DEBUG 23131 --- [http-nio-9221-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 10:18:10.806 DEBUG 23131 --- [http-nio-9221-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY
+2021-11-05 10:18:25.326 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/v1/ignore/ruleName", parameters={}
+2021-11-05 10:18:25.332 DEBUG 23131 --- [http-nio-9221-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#getRuleNameIgnoreRules()
+2021-11-05 10:18:25.333 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json]
+2021-11-05 10:18:25.333 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [[]]
+2021-11-05 10:18:25.335 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : POST "/v1/scanFile", parameters={masked}
+2021-11-05 10:18:25.335 DEBUG 23131 --- [http-nio-9221-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.hcl.appscan.customscannersservice.controller.CustomScannersController#runScanFile(MultipartFile, String, int[])
+2021-11-05 10:18:25.337 DEBUG 23131 --- [http-nio-9221-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-11-05 10:18:25.339 DEBUG 23131 --- [http-nio-9221-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Using @ExceptionHandler com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice#handleInvalidArgument(IllegalArgumentException)
+2021-11-05 10:18:25.340 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [application/json] and supported [application/json, application/*+json, application/json, application/*+json]
+2021-11-05 10:18:25.340 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [com.hcl.appscan.customscannersservice.controller.CustomScannersControllerAdvice$ErrorMessage@675eb51 (truncated)...]
+2021-11-05 10:18:25.341 DEBUG 23131 --- [http-nio-9221-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: L'extension de fichier suivante n'est pas prise en chargeÂ : css]
+2021-11-05 10:18:25.342 DEBUG 23131 --- [http-nio-9221-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 422 UNPROCESSABLE_ENTITY

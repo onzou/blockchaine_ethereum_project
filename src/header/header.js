@@ -4,17 +4,11 @@ const Header = () =>
 {
 
   return (
-    <header className="header">
-        <nav>
-            <div className="logo">
-            Donation
-            </div>
-            <div className="connection">
-            {/* <div className="link one">Créer un post</div> */}
-            </div>
-            
-        </nav>
-    </header>
+    <ul class="nav shadow">
+    <li class="nav-item">
+      <a class="nav-link active h3" aria-current="page">Plateforme de Donation</a>
+    </li>
+  </ul>
   );
 };
 
